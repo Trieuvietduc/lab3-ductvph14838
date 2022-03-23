@@ -19,8 +19,7 @@ type PRODUCT_TYPE = {
 export class ProductComponent implements OnInit {
   products: any;
   constructor(private ps: ProductService,
-      private router: Router
-    ) { }
+      private router: Router) { }
   ngOnInit(): void {
     this.onget();
     // this.router.navigate(['/product'])
