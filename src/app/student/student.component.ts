@@ -81,7 +81,6 @@ export class StudentComponent implements OnInit {
       // 2. voi searchValue tien hanh .trim() de loai bo khoang trang o 2 dau
       const studentNameLowerCase = student.name.toLowerCase();
       const searchValueLowerCase = this.searchValue.toLowerCase().trim();
-
       return studentNameLowerCase.indexOf(searchValueLowerCase) !== -1;
     }
     );
