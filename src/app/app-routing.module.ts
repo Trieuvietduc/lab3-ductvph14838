@@ -11,42 +11,26 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductComponent } from './product/product.component';
 import { StudentComponent } from './student/student.component';
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: LayoutComponent,
-  //   children: [{
-  //     path: '',
-  //     component: AsideComponent,
-  //     children: [
-  //       {
-  //         path: '',
-  //         component: FooterComponent,
-  //         children: [
-  //           {
-  //             path: '',
-  //             component: HeaderComponent
-  //           },
-  //         ]
-  //       },
-  //     ]
-  //   },
-  //   ]
-  // },
   {
     path: '',
     component: LayoutComponent,
-  },
-  {
-    path: '',
-    component: AsideComponent,
-  },
-  {
-    path: '',
-    component: FooterComponent,
-  },
-  {
-    path: '',
-    component: HeaderComponent,
+    children: [{
+      path: '',
+      component: AsideComponent,
+      children: [
+        {
+          path: '',
+          component: FooterComponent,
+          children: [
+            {
+              path: '',
+              component: HeaderComponent
+            },
+          ]
+        },
+      ]
+    },
+    ]
   },
   {
     path: 'product',
