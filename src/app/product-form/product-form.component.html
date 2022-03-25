@@ -3,9 +3,20 @@
 
 <form action="" class="form" #productForm="ngForm" (submit)="onsubmit(productForm.value)">
     <input *ngIf="id" type="hidden" [(ngModel)]="productDetail.id" name="id"><br>
-    <input type="text" placeholder="Tên" [(ngModel)]="productDetail.name" name="name"><br>
-    <input type="text" placeholder="mô tả" [(ngModel)]="productDetail.desc" name="desc"><br>
-    <input type="text" placeholder="giá" [(ngModel)]="productDetail.price" name="price"><br>
-    <button class="btn btn-success">Submit</button>
+    <input type="text" placeholder="Tên" [(ngModel)]="productDetail.name" name="name" #name="ngModel" required><br>
+    <input type="text" placeholder="mô tả" [(ngModel)]="productDetail.desc" name="desc" #desc="ngModel" minlength="6" required><br>
+    <input type="text" placeholder="giá" [(ngModel)]="productDetail.price" name="price" #price="ngModel" min="0" required><br>
+    <div *ngIf="productForm.form.dirty">
+        <div *ngIf="name.errors?.['required']">
+            tên sp bắt buộc phải nhập
+        </div>
+        <div *ngIf="desc.errors?.['minlength']">
+           mô tả phải 6 kí tự trở lên
+        </div>
+        <div *ngIf="price.errors?.['min']">
+            giá phải hơn 0
+        </div>
+    </div>
+    <button class="btn btn-success" [disabled]="productForm.form.invalid">Submit</button>
    
 </form>

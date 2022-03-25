@@ -15,6 +15,10 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductService } from './services/product.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LayoutComponent } from './layout/layout.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { AsideComponent } from './layout/aside/aside.component';
+import { FooterComponent } from './layout/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,11 @@ import { HttpClientModule } from '@angular/common/http';
     ProductComponent,
     StudentComponent,
     ProductDetailComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    LayoutComponent,
+    HeaderComponent,
+    AsideComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,4 +43,5 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [ProductService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }
